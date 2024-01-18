@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="fr" data-fr-theme>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>En-tête - Design System</title>
+    <meta name="theme-color" content="#000091"><!-- Défini la couleur de thème du navigateur (Safari/Android) -->
+    <link rel="apple-touch-icon" href="dist/favicon/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="icon" href="dist/favicon/favicon.svg" type="image/svg+xml">
+    <!-- si favicon.ico peut etre placé à la racine du serveur, retirer la ligne ci-dessous -->
+    <link rel="shortcut icon" href="dist/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+    <link rel="manifest" href="dist/favicon/manifest.webmanifest" crossorigin="use-credentials">
+    <!-- Modifier les chemins relatifs des favicons en fonction de la structure du projet -->
+    <!-- Dans le fichier manifest.webmanifest aussi, modifier les chemins vers les images -->
+    <link href="dist/core/core.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/link/link.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/tile/tile.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/button/button.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/logo/logo.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/form/form.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/card/card.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/badge/badge.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/tag/tag.main.css" rel="stylesheet" file="main">
+    <link href="dist/scheme/scheme.css" rel="stylesheet" file="main">
+    <link href="dist/component/accordion/accordion.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/navigation/navigation.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/modal/modal.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/input/input.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/radio/radio.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/search/search.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/translate/translate.main.css" rel="stylesheet" file="main">
+    <link href="dist/utility/utility.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/header/header.main.css" rel="stylesheet" file="main">
+    <link href="dist/core/core.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/table/table.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/table/table.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/tile/tile.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/link/link.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/button/button.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/logo/logo.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/form/form.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/badge/badge.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/tag/tag.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/accordion/accordion.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/navigation/navigation.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/modal/modal.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/input/input.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/radio/radio.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/search/search.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/translate/translate.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/utility/utility.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/header/header.legacy.css" rel="stylesheet" file="legacy">
+    <link href="dist/component/footer/footer.main.css" rel="stylesheet" file="main">
+    <link href="dist/component/footer/footer.legacy.css" rel="stylesheet" file="legacy">
+    <style>
+        code[class*="language-"],
+        pre[class*="language-"] {
+            white-space: pre-wrap;
+        }
+
+        .example-controls {
+            z-index: 100000;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 8px 16px -16px rgba(0, 0, 0, 0.32);
+        }
+
+        .example-controls>button {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .example-controls__content {
+            padding: 16px;
+            background-color: var(--background-elevated-white);
+        }
+
+        .example-controls .fr-collapse--expanded~[aria-expanded] {
+            display: none;
+        }
+
+        .example-controls .fr-collapse:not(.fr-collapse--expanded)~button:not([aria-expanded]) {
+            display: none;
+        }
+
+        .example-controls [class*="-form-group"] {
+            margin-bottom: 0;
+        }
+
+        .fr-display-button {
+            position: fixed;
+            bottom: 3.5rem;
+            right: 2rem;
+        }
+
+        @media screen and (-ms-high-contrast: active),
+        (-ms-high-contrast: none) {
+
+            /* IE10+ specific styles go here */
+            .example-controls {
+                display: none;
+            }
+        }
+
+    </style>
+    <script>
+        window['dsfr'] = {
+            verbose: false,
+            //mode: 'manual'
+        }
+
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet" />
+</head>
+
+<body id="top" class="fr-mb-12w">
+    <div class="fr-mb-12w">
+        <style>
+            @media (min-width: 62em) {
+                .relative-sample\@lg {
+                    position: relative;
+                }
+            }
+
+        </style>
+        
+        <div class="fr-mb-6v relative-sample@lg" style="z-index:1410;">
+            <header role="banner" class="fr-header">
+                <div class="fr-header__body">
+                    <div class="fr-container">
+                        <div class="fr-header__body-row">
+                            <div class="fr-header__brand fr-enlarge-link">
+                                <div class="fr-header__brand-top">
+                                    <div class="fr-header__logo">
+                                        <p class="fr-logo">
+                                            République
+                                            <br>Française
+                                        </p>
+                                    </div>
+                                    <div class="fr-header__operator">
+                                        <img class="fr-responsive-img" style="max-width:9.0625rem;" src="images/MCNUM2.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                                        <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                                    </div>
+                                    <div class="fr-header__navbar">
+                                        <button class="fr-btn--search fr-btn" data-fr-opened="false" aria-controls="modal-567" id="button-568" title="Rechercher">
+                                            Rechercher
+                                        </button>
+                                        <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-569" aria-haspopup="menu" id="button-570" title="Menu">
+                                            Menu
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="fr-header__service">
+                                    <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - [À MODIFIER - texte alternatif de l’image : nom de l'opérateur ou du site serviciel] - République Française">
+                                        <p class="fr-header__service-title">
+                                            CERT MIN SOC
+                                        </p>
+                                    </a>
+                                    <p class="fr-header__service-tagline">Sécurité-Protection</p>
+                                </div>
+                            </div>
+                            <div class="fr-header__tools">
+                                <div class="fr-header__tools-links">
+                                    <ul class="fr-btns-group">
+                                        <li>
+                                            <a class="fr-btn fr-icon-add-circle-line" href="[url - à modifier]">
+                                                Créer un espace
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="fr-btn fr-icon-lock-line" href="[url - à modifier]">
+                                                Se connecter
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="fr-btn fr-icon-account-line" href="[url - à modifier]">
+                                                S’enregistrer
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="fr-header__search fr-modal" id="modal-567">
+                                    <div class="fr-container fr-container-lg--fluid">
+                                        <button class="fr-btn--close fr-btn" aria-controls="modal-567" title="Fermer">
+                                            Fermer
+                                        </button>
+                                        <div class="fr-search-bar" id="search-566" role="search">
+                                            <label class="fr-label" for="search-566-input">
+                                                Rechercher
+                                            </label>
+                                            <input class="fr-input" placeholder="Rechercher" type="search" id="search-566-input" name="search-566-input">
+                                            <button class="fr-btn" title="Rechercher">
+                                                Rechercher
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fr-header__menu fr-modal" id="modal-569" aria-labelledby="button-570">
+                    <div class="fr-container">
+                        <button class="fr-btn--close fr-btn" aria-controls="modal-569" title="Fermer">
+                            Fermer
+                        </button>
+                        <div class="fr-header__menu-links">
+                        </div>
+                        <nav class="fr-nav" id="navigation-573" role="navigation" aria-label="Menu principal">
+                            <ul class="fr-nav__list">
+                                <li class="fr-nav__item">
+                                    <a class="fr-nav__link" href="#" target="_self">CERT MIN SOC</a>
+                                </li>
+                                <li class="fr-nav__item">
+                                    <a class="fr-nav__link" href="#" target="_self">Nos Missions</a>
+                                </li>
+                                <li class="fr-nav__item">
+                                    <a class="fr-nav__link" href="#" target="_self">Contact</a>
+                                </li> 
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+            </header>
+            <div class="fr-grid-row fr-mb-3w main-image">
+                <div class="fr-col fr-col-md-6 picture">
+                    <div class="fr-card fr-enlarge-link">
+                        <div class="fr-card__header">
+                            <div class="fr-card__img">
+                                <img class="fr-responsive-img" src="images/main-image.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]">
+                                <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="text">
+                    <div class="test">
+                        <div class="bloccert">
+                            <h1>CERT <br>MIN SOC</h1>
+                        </div>
+                        <div class="certimage">
+                            <img src="images/MCNUM logo.png" alt="">
+                        </div>
+                        <div class="certprevention">
+                            <h2>Prévenir, gérer et traiter les incidents de sécurité informatiques</h2>
+                        </div>
+                        <div class="fr-mb-6v">
+                            <a class="fr-btn fr-btn--tertiary" href="[url - à modifier]">
+                                Découvrir
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fond">
+            <div class="fr-grid-row fr-mb-3w presentation">
+                <div class="fr-col fr-col-md-6 picture">
+                    <div class="fr-card fr-enlarge-link">
+                        <div class="fr-card__header">
+                            <div class="fr-card__img descriptif">
+                                <div class="bandorouge">
+                                    
+                                </div>
+                                <h2>Qu'est ce que le CERT ?</h2>
+                                <p>Le Cert Min Soc (Computer Emergency Response Team )  
+                                est une équipe chargée de contribuer à la sécurité opérationnelle 
+                                des Ministères Sociaux en prévenant et en intervenant 
+                                sur les incidents de sécurité impactant les systèmes 
+                                d’information sous sa responsabilité.</p>
+                                <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="photo_description">
+                    <div class="couverture">
+                        
+                    </div>
+                    <div class="photo">
+                        <img src="images/presentation.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="fr-mb-6v missions">
+                <div class="title_mission">
+                    <h2>Nos Missions</h2>
+                </div>
+                <div class="fr-grid-row fr-grid-row--gutters">
+                            
+                    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+                                
+                        <div class="fr-tile fr-enlarge-link column1">
+                                    
+                            <div class="fr-tile__body">
+                                <h4 class="fr-tile__title">
+                                    <a class="fr-tile__link " href>Veille Technique</a>
+                                </h4>
+                                <h5>......................</h5>
+                                <p class="fr-tile__desc">Identifier et évaluer les dernières failes de sécurité découvertes</p>
+                            </div>
+                            <div class="fr-tile__img">
+                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                <img src="images/image_veille2.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+                        <div class="fr-tile fr-enlarge-link column2">
+                            <div class="fr-tile__body">
+                                <h4 class="fr-tile__title">
+                                    <a class="fr-tile__link" href>Cyber threat intelligence</a>
+                                </h4>
+                                <h5>......................</h5>
+                                <p class="fr-tile__desc">Collecte de renseignements liés au menaces / aux acteurs de la menace de la sphère cyber</p>
+                            </div>
+                            <div class="fr-tile__img">
+                                <img src="images/cyber.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+                        <div class="fr-tile fr-enlarge-link column3">
+                            <div class="fr-tile__body">
+                                <h4 class="fr-tile__title">
+                                    <a class="fr-tile__link" href>Appui à la remédiation</a>
+                                </h4>
+                                <h5>......................</h5>
+                                <p class="fr-tile__desc">Aide à la reconstruction de plan de remédiation d'un incident, correction de failles</p>
+                            </div>
+                            <div class="fr-tile__img">
+                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                <img src="images/emergence.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr-col-6 fr-col-md-4 fr-col-lg-3">
+                        <div class="fr-tile fr-enlarge-link column2">
+                            <div class="fr-tile__body">
+                                <h4 class="fr-tile__title">
+                                    <a class="fr-tile__link" href>Sensibilisation</a>
+                                </h4>
+                                <h5>......................</h5>
+                                <p class="fr-tile__desc">Promouvoir les bonnes pratiques de sécurité</p>
+                            </div>
+                            <div class="fr-tile__img">
+                                <img class="fr-responsive-img" src="../../../example/img/placeholder.1x1.png" alt="" />
+                                <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
+                                <img src="images/sensibilisation.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="fr-mb-6v contact">
+                <div class="title_mission">
+                    <h2>Nous contacter</h2>
+                </div>
+                <div class="fr-mb-6v informations">
+                    <article class="communication">
+                        <div class="fr-grid-row fr-grid-row--gutters">
+                            <div class="fr-col-12 details">
+                                <div class="fr-tile fr-enlarge-link fr-tile--horizontal adresse">
+                                    <div class="localize">
+                                        <img src="images/localize.svg" alt="">
+                                    </div>
+                                    <div class="fr-tile__body">
+                                        <p class="fr-tile__desc infotext">39-43, quai André-Citroën
+                                            75739 Paris Cedex
+                                        </p>
+                                    </div>
+                                    <!--<div class="fr-tile__img">
+                                         L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance 
+                                    </div>
+                                    -->
+                                </div>
+                            </div>
+                            <div class="fr-col-12 details">
+                                <div class="fr-tile fr-enlarge-link fr-tile--horizontal adresse">
+                                    <img src="images/telephone.svg" alt="" class="localize">
+                                    <div class="fr-tile__body">
+                                        <p class="fr-tile__desc infotext">Standard du ministère:
+                                            01 40 56 60 00
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="fr-col-12 details">
+                                <div class="fr-tile fr-enlarge-link fr-tile--horizontal adresse">
+                                    <img src="images/messagerie.svg" alt="" class="localize">
+                                    <div class="fr-tile__body">
+                                        <p class="fr-tile__desc infotext">cert-minsoc@sg.social.gouv.fr
+                                        </p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="communication">
+                        <div class="fr-grid-row fr-grid-row--gutters">
+                            <div class="fr-col-12 details">
+                                <div class="fr-tile fr-enlarge-link fr-tile--horizontal adresse">
+                                    <div class="localize">
+                                        <img src="images/document.svg" alt="">
+                                    </div>
+                                    <div class="fr-tile__body">
+                                        <p class="fr-tile__desc infotext">RFC 2350 : [lien à maj]
+                                        </p>
+                                    </div>
+                                    <!--<div class="fr-tile__img">
+                                         L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance 
+                                    </div>
+                                    -->
+                                </div>
+                            </div>
+                            <div class="fr-col-12 details">
+                                <div class="fr-tile fr-enlarge-link fr-tile--horizontal adresse">
+                                    <img src="images/telephone.svg" alt="" class="localize">
+                                    <div class="fr-tile__body">
+                                        <p class="fr-tile__desc infotext">Formulaire de déclaration des incidents :[Lien à maj]
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tableau">
+                        <div class="fr-mb-6v">
+                            <div class="fr-table">
+                                <table>
+                                    <caption>Clé PGP</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" id="identifiant">Identifiant </th>
+                                            <th scope="col" id="identifiant_number">0xBFE98B20 </th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="empreinte">Empreinte</td>
+                                            <td id="empreinte_number">
+                                                <h4>E80B3BC29150D1FA1E493
+                                                    C90A0DF77A8BFE98B20</h4>
+                                            </td>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <td id="cle_title">Clé publique</td>
+                                            <td id="cle_number">[lien à màj]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </article>
+                    
+                </div>    
+            </div>
+        </div>
+
+        <div class="fr-mb-6v">
+            <footer class="fr-footer" role="contentinfo" id="footer-1167">
+                <div class="fr-container">
+                    <div class="fr-footer__body">
+                        <div class="fr-footer__brand fr-enlarge-link">
+                            <p class="fr-logo">
+                                République
+                                <br>Française
+                            </p>
+                            <a class="fr-footer__brand-link" href="/" title="Retour à l’accueil du site - [À MODIFIER - texte alternatif de l’image : nom de l&#39;opérateur ou du site serviciel] - République Française">
+                                <img class="fr-footer__logo" style="width:3.5rem;" src="../../../example/img/placeholder.9x16.png" alt="[À MODIFIER - texte alternatif de l’image]" />
+                                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+                            </a>
+                        </div>
+                        <div class="fr-footer__content">
+                            <p class="fr-footer__content-desc">Lorem ipsum dolor sit amet, consectetur adipiscing, incididunt, ut labore et dolore magna aliqua. Vitae sapien pellentesque habitant morbi tristique senectus et. Diam maecenas sed enim ut. Accumsan lacus vel facilisis volutpat est. Ut aliquam purus sit amet luctus. Lorem ipsum dolor sit amet consectetur adipiscing elit ut.</p>
+                            <ul class="fr-footer__content-list">
+                                <li class="fr-footer__content-item">
+                                    <a class="fr-footer__content-link" target="_blank" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+                                </li>
+                                <li class="fr-footer__content-item">
+                                    <a class="fr-footer__content-link" target="_blank" href="https://gouvernement.fr">gouvernement.fr</a>
+                                </li>
+                                <li class="fr-footer__content-item">
+                                    <a class="fr-footer__content-link" target="_blank" href="https://service-public.fr">service-public.fr</a>
+                                </li>
+                                <li class="fr-footer__content-item">
+                                    <a class="fr-footer__content-link" target="_blank" href="https://data.gouv.fr">data.gouv.fr</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="fr-footer__bottom">
+                        <ul class="fr-footer__bottom-list">
+                            <li class="fr-footer__bottom-item">
+                                <a class="fr-footer__bottom-link" href="#">Plan du site</a>
+                            </li>
+                            <li class="fr-footer__bottom-item">
+                                <a class="fr-footer__bottom-link" href="#">Accessibilité : non/partiellement/totalement conforme</a>
+                            </li>
+                            <li class="fr-footer__bottom-item">
+                                <a class="fr-footer__bottom-link" href="#">Mentions légales</a>
+                            </li>
+                            <li class="fr-footer__bottom-item">
+                                <a class="fr-footer__bottom-link" href="#">Données personnelles</a>
+                            </li>
+                            <li class="fr-footer__bottom-item">
+                                <a class="fr-footer__bottom-link" href="#">Gestion des cookies</a>
+                            </li>
+                        </ul>
+                        <div class="fr-footer__bottom-copy">
+                            <p>Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank">licence etalab-2.0</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+                
+        
+        
+    
+    <script type="module" src="dist/core/core.module.js"></script>
+    <script type="module" src="dist/component/navigation/navigation.module.js"></script>
+    <script type="module" src="dist/component/modal/modal.module.js"></script>
+    <script type="module" src="dist/scheme/scheme.module.js"></script>
+    <script type="module" src="dist/component/accordion/accordion.module.js"></script>
+    <script type="module" src="dist/component/header/header.module.js"></script>
+    <script type="module" src="dist/component/display/display.module.js"></script>
+    <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/core/core.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/component/accordion/accordion.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/component/header/header.nomodule.js"></script>
+    <script type="text/javascript" nomodule src="dist/component/display/display.nomodule.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+</body>
+
+</html>
